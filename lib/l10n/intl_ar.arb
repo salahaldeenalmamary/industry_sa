@@ -1,0 +1,29 @@
+{
+  "@@locale": "ar",
+  "bottomNavHome": "الرئسية",
+  "bottomNavFavorite": "المفضلة",
+  "bottomNavSettings": "الاعدادات",
+  "titleOtherView": "اخرى",
+  "bottomNavCategories": "الفئات",
+  "bottomNavPriceOffers": "عروض الاسعار",
+  "bottomNavFactories": "المصانع",
+  "bottomNavCart": "السلة",
+  "numberOfCarton": "عدد الوحدات في الكرتون",
+  "minAllowedQuantityOrder": "الحد الادنى للطلب",
+  "currency": "س.ر",
+  "chooseYourLocation": "اختر موقعك",
+  "shippingTo": "الشحن إلى",
+  "someThingWentWrong": "حدث خطأ ما",
+  "retry": "أعد المحاولة",
+  "noInternetConnection": "لا يوجد اتصال بالإنترنت",
+  "unauthorized": "غير مصرح",
+  "login": "تسجيل الدخول",
+  "noDataAvailable": "لا توجد بيانات", 
+
+ 
+  "offers":"العروض",
+  "all": "الكل",
+  "factories": "المصانع",
+  "products": "المنتجات"
+
+}
