@@ -1,4 +1,6 @@
+import 'package:appriverpod/app/core/data/local/my_shared_pref.dart';
 import 'package:appriverpod/app/data/models/common/appConfig.dart';
+import 'package:appriverpod/app/data/models/common/category.dart';
 import 'package:dio/dio.dart';
 
 import '../../../utils/ApiEndpoints.dart';
@@ -45,7 +47,8 @@ class RemoteDataSourceImpl extends BaseRemoteSource
 
   @override
   Future<ApiResponse<AppConfig>> getAppConfig() async {
-    var dioCall = dioClient.get(ApiEndpoints.common);
+    var dioCall = dioClient
+        .get(ApiEndpoints.common(MySharedPref.getCurrentLocal().languageCode));
 
     final response = await callApiWithErrorParser(dioCall);
 
@@ -53,4 +56,29 @@ class RemoteDataSourceImpl extends BaseRemoteSource
       return AppConfig.fromJson(data);
     });
   }
+
+  @override
+Future<ApiResponse<List<Category>>> getCategories() async {
+  try {
+    // Construct the endpoint with the current language code
+    var dioCall = dioClient.get(
+        ApiEndpoints.categories(MySharedPref.getCurrentLocal().languageCode));
+
+    // Await the API call
+    final response = await callApiWithErrorParser(dioCall);
+
+    // Extract and parse the 'data' field from the response
+    final List<Category> categories = (response.data['data'] as List<dynamic>)
+        .map((item) => Category.fromJson(item))
+        .toList();
+
+    return ApiResponse<List<Category>>(
+      data: categories,
+ 
+    );
+  } catch (error) {
+    // Handle any errors
+    throw Exception('Failed to fetch categories: $error');
+  }
 }
+    }

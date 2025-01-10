@@ -4,6 +4,7 @@ import 'package:appriverpod/config/translations/localization_service.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../../config/theme/light_theme_colors.dart';
 import '../../../../utils/image.dart';
 import '../../../widget/selectable_item_bottom_sheet_widget.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +43,7 @@ class SelectableItemBottomSheetCountry extends ConsumerWidget {
             overflow: TextOverflow.ellipsis, 
           ).expanded(flex: 2),
         ],
-      ).container(color: Colors.green, height: 40),
+      ).container(color:LightThemeColors.primaryTextColor, height: 40),
       selectableItems: state.data?.countries
               ?.map(
                 (e) => SelectableItem(title: e.name, isSelected: false),

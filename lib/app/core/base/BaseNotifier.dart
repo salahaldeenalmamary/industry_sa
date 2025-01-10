@@ -13,7 +13,6 @@ import '../network/exceptions/service_unavailable_exception.dart';
 import '../network/exceptions/unauthorize_exception.dart';
 import 'BaseState.dart';
 
-import 'package:flutter/material.dart';
 
 class BaseNotifier<S extends BaseState> extends StateNotifier<S> {
 

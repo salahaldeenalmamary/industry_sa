@@ -13,7 +13,7 @@ class categoriesSideBar extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
 
     final categoriesState = ref.watch(categoriesProvider);
-    final categories = categoriesState.categories ?? [];
+    final categories = categoriesState.data ?? [];
     final currentCategory = categoriesState.currentCategory;
     final categoryNotifier = ref.read(categoriesProvider.notifier);
 
